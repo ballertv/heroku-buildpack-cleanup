@@ -5,4 +5,5 @@ echo "-----> Found a .slugcleanup"
 cd $1
 
 cat .slugcleanup | xargs -I {} bash -c 'echo "Removing: {}" && rm -rf {}'
+du -ha --max-depth 6 /app | sort -hr
 rm .slugcleanup
